@@ -3,13 +3,11 @@ package com.example.entity;
 import com.example.entity.enums.ERole;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Data // это аннотация lombok. мы создали геттеры и сеттеры
 @Entity
@@ -44,6 +42,9 @@ public class User {
     private LocalDateTime createdDate;
 
 
+    // в видео этого нет
+    @Transient
+    private Collection<? extends GrantedAuthority> authorities;
 
     @PrePersist
     protected void onCreate() {
