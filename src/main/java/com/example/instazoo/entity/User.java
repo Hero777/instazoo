@@ -1,6 +1,6 @@
-package com.example.entity;
+package com.example.instazoo.entity;
 
-import com.example.entity.enums.ERole;
+import com.example.instazoo.entity.enums.ERole;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,6 +11,7 @@ import java.util.*;
 
 @Data // это аннотация lombok. мы создали геттеры и сеттеры
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id

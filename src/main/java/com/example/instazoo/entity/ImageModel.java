@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.instazoo.entity;
 
 import lombok.Data;
 import net.minidev.json.annotate.JsonIgnore;
@@ -15,7 +15,7 @@ public class ImageModel {
     @Column(nullable = false)
     private String name;
     @Lob
-    @Column(columnDefinition = "LONGBLOB")
+    @Column(columnDefinition = "BYTEA")
     private byte[] imageBytes;
     @JsonIgnore
     private Long userId;
