@@ -53,7 +53,7 @@ public class     AuthController {
         return ResponseEntity.ok(new JWTTokenSuccessResponse(true, jwt));
     }
 
-    @PostMapping("/signup")
+    @PostMapping("/singup")
     public ResponseEntity<Object> registerUser(@Valid @RequestBody SignupRequest signupRequest, BindingResult bindingResult) {
         ResponseEntity<Object> errors = responseErrorValidation.mapValidationService(bindingResult);
         if (!ObjectUtils.isEmpty(errors)) return errors;
